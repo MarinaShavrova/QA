@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<body>
+    <meta charset="UTF-8">
+    <title>WebElement</title>
+<style>
+    h1 {
+        color: blue;
+    }
+    #two{
+        background-color: chartreuse;
+    }
+    .red{
+        background-color: darkred;
+    }
+    #one{
+        background-color: aquamarine;
+    }
+    h2{
+        background-color: #76c9fd;
+    }
+    /* >обращается к прямым наследникам */
+    /* ~ обращается ко всем соседним элементам */
+    /* + обращается к первому соседу*/
+    div section p { /* >обращается к прямым наследникам */
+        color :red;
+    }
+    div ul{
+        list-style: none;
+    }
+    div a {
+        list-decoration: none;
+        color: orange;
+    }
+    div li:nth-child(2n){
+        background-color: #4b83b5;
+    }
+    div li:nth-last-child(2n){
+    background-color: #cb217d;
+    }
+    div li:nth-of-type(2n){
+        background-color: #00ba34;
+    }
+    body > select:nth-child(6) > option:nth-child(2){
+        background-color: #00ba34;
+    }
+    body > select:nth-child(7){
+        background-color: #cb217d;
+    }
+</style>
+    <body>
+    <H1>Hello select</H1>
+    <form action="#"></form>
+        <select name = "cities" multiple size = "4">
+            <option>Dnipro</option>
+            <option>Berdyansk</option>
+            <option>Pavlograd</option>
+            <option selected>Odessa</option>
+        </select>
+
+    <select name = "countries" multiple size = "4">
+        <option>USA</option>
+        <option>Canada</option>
+        <option>Russia</option>
+        <option>Ukraine</option>
+    </select>
+
+    </body>
+<body>
+    <header>
+     <main>
+
+         <H1> Header for article</H1>
+         <H2 class = "red"> Header for article</H2>
+
+     </main>
+    </header>
+    <div> Div
+        <p>Paragraph #1</p>
+        <p> Paragraph #2
+            <section> Section
+        <p>Paragraph #3</p>
+            </section>
+        </p>
+        <p>Paragraph #4</p>
+        <p>Paragraph #5</p>
+    </div>
+    <main>
+        <article>
+            <header>
+                <H2> Header for article</H2>
+            </header>
+            <nav>
+                <a href="http://google.com">Google</a>
+            </nav>
+<div>
+    <ul>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+        <li><a href="#">item</a></li>
+        <li>
+            <ol>
+                <li>one</li>
+                <li>two</li>
+                <li>three</li>
+                <li>four</li>
+                <li>five</li>
+            </ol>
+        </li>
+    </ul>
+</div>
+            <div>
+    <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+            </div>
+            <div>
+   <li>
+       <ol>
+        <li>one</li>
+        <li>two</li>
+        <li>three</li>
+        <li>four</li>
+        <li>five</li>
+   </ol>
+   </li>
+
+            </div>
+</article>
+    </main>
+</body>
+</html>
