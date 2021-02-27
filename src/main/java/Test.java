@@ -31,7 +31,7 @@ public class Test {
             System.out.println("No");
         }
         System.out.println("1111111");
-        System.out.println();
+        System.out.println("234567");
         driver.quit();
     }
 
