@@ -31,7 +31,10 @@ public class Test {
             System.out.println("No");
         }
         System.out.println("1111111");
-        System.out.println("234567");
+        System.out.println("Тестирование чего-то");
+
+
+
         driver.quit();
     }
 
