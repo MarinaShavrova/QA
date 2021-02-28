@@ -70,10 +70,6 @@ String result = "";
             }
 
 
-
-
-
-
         } catch (Exception e) {
             System.out.println("Error - value:Pepperoni");
         }
@@ -114,7 +110,7 @@ String result = "";
             }
 
         } catch (Exception e) {
-            System.out.println("Error - value:Pepperoni");
+            System.out.println("Error - value:Mushrooms");
         }
         Thread.sleep(2000);
         driver.quit();
