@@ -15,35 +15,32 @@ public class HomeWork_6 {
         String url = "https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_iframe";
         System.out.println("Start test");
         driver.get(url);
-        try{
-            WebElement iframe1 = driver.findElement(By.xpath("/html/body/iframe"));
-            System.out.println("Полученный title: "+ driver.getTitle());
-            System.out.println("Ok");
-        } catch (NotFoundException e){
-            System.out.println("Error!");
-        }
+
         WebElement iframe = null;
         try{
-           iframe = driver.findElement(By.xpath("//*[@id=\"iframeResult\"]"));
-            System.out.println("Полученный title: "+ driver.getTitle());
-                       System.out.println("Ok");
+
+            iframe = driver.findElement(By.cssSelector("#iframeResult"));
+            WebDriver frame = driver.switchTo().frame(iframe);
+            System.out.println("Title основного фрейма: "+ driver.getTitle());
+            WebDriver frame1 = driver.switchTo().frame(0);
+
+            String code = frame1.getPageSource();
+
+            int index = code.indexOf("W3Schools Online Web Tutorials");
+           System.out.println("Искомый title: " + code.substring(index,index+30));
+
+            if (code.substring(index,index+30).equals("W3Schools Online Web Tutorials")){
+                System.out.println("Title - определен корректно");
+            } else {
+                System.out.println("Title отличается от заданного в задаче");
+                        }
+
+
         } catch (NotFoundException e){
             System.out.println("Error!");
         }
-        WebDriver frame1 =  driver.switchTo().frame(iframe);
-
-        WebDriver frame2 =  driver.switchTo().frame(0);
-        String page = frame1.getPageSource();
-        System.out.println(frame2);
-        System.out.println("Полученный title: "+ driver.getTitle());
-
-       // WebElement select = (WebElement) frame1.findElement(By.xpath("/html/body/iframe"));
-
-       // List<WebElement> els = frame1.findElements(By.xpath("/html/body/iframe"));
-      //  System.out.println("Полученный title: "+ driver.getTitle());
 
 
-    //    System.out.println("Текст во фрейме: "+ driver.getTitle()+ "els "+els+"===="+els.size());
         driver.quit();
         System.out.println("End test");
     }
