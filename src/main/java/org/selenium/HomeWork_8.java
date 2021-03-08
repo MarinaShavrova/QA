@@ -41,8 +41,6 @@ public class HomeWork_8 {
             WebElement selectElem = driver.findElement(By.cssSelector("#additives"));
             Select select = new Select(selectElem);
 
-
-           // WebElement pepperoni = driver.findElement(By.xpath("//option[@value='Pepperoni']"));
             select.selectByValue("Pepperoni");
             select.selectByValue("Cheese");
 
@@ -77,8 +75,6 @@ String result = "";
             WebElement selectElem = driver.findElement(By.cssSelector("#additives"));
             Select select = new Select(selectElem);
 
-
-            // WebElement pepperoni = driver.findElement(By.xpath("//option[@value='Pepperoni']"));
             select.selectByValue("Pepperoni");
             select.selectByValue("Cheese");
             select.selectByValue("Mushrooms");
@@ -115,6 +111,11 @@ String result = "";
         Thread.sleep(2000);
         driver.quit();
         System.out.println("End test");
+
+       // Actions action = new Actions(driver);
+       //action.contextClick().perform();
+
+
     }
 
 
