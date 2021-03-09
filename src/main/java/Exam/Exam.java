@@ -64,7 +64,6 @@ try{
 } catch (Exception e) {
     e.printStackTrace();
 }
-
         Thread.sleep(2000);
         driver.quit();
         System.out.println("End test");
