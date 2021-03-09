@@ -35,20 +35,23 @@ try{
     } else {
         System.out.println("Error");
     }
-
+// Переход на предыдущую вкладку
     driver.navigate().back();
-
-
+// Переход на главную страницу со списком продуктов
     driver.navigate().to("http://shop.demoqa.com/shop/");
+
     WebElement search = driver.findElement(By.xpath("/html/body/div[2]/header/div[2]/div/div/div/a"));
     search.click();
+// Ввод текста в поле - Поиск
     search.findElement(By.xpath("/html/body/div[2]/header/div[3]/div[2]/form/input[1]")).sendKeys("Sun Glasses");
     driver.findElement(By.xpath("//*[@id=\"noo-site\"]/header/div[3]/div[2]/form/button")).submit();
     Thread.sleep(3000);
+// Переход на продукт
     WebElement glasses = driver.findElement(By.cssSelector("div.noo-product-item:nth-child(4) > div:nth-child(1) > h3:nth-child(1) > a:nth-child(1)"));
     glasses.click();
     Thread.sleep(3000);
     WebElement webElement = driver.findElement(By.cssSelector("p.price > ins:nth-child(2) > span:nth-child(1) > bdi:nth-child(1)"));
+// Получение стоимости товара
     System.out.println("Полученный текст на экране: "+ webElement.getText());
      String test = webElement.getText();
      String test1 = test.substring(1);
@@ -60,12 +63,12 @@ try{
         System.out.println("Error");
     }
 
-
-} catch (Exception e) {
-    e.printStackTrace();
+} catch (NoSuchElementException e) {
+    e.getMessage();
+} finally {
+    assert driver != null;
+    driver.quit();
 }
-        Thread.sleep(2000);
-        driver.quit();
-        System.out.println("End test");
+      System.out.println("End test");
     }
 }
