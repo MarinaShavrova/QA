@@ -38,7 +38,7 @@ public class HomeWork_11 {
        } catch (Exception e) {
             e.printStackTrace();
         }
-        Thread.sleep(2000);
+        Thread.sleep(20000);
         driver.quit();
         System.out.println("End test");
     }
